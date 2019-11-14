@@ -16,8 +16,16 @@ public class Employee {
 	/*
 	 * Complete the parameterized Constructor
 	 */
-	public Employee(int emplId, String name, String location) {
+	
+	/*public Employee(int emplId, String name, String location) {
 
+	}*/
+
+	public Employee(int emplId, String name, String location) {
+		super();
+		this.emplId = emplId;
+		this.name = name;
+		this.location = location;
 	}
 
 	/*
@@ -31,6 +39,35 @@ public class Employee {
 	 * Complete the Getter and Setters
 	 */
 	public int getEmplId() {
+		return emplId;
+	}
+
+	public void setEmplId(int emplId) {
+		this.emplId = emplId;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getLocation() {
+		return location;
+	}
+
+	public void setLocation(String location) {
+		this.location = location;
+	}
+	
+	@Override
+	public String toString() {
+		return "Employee [emplId=" + emplId + ", name=" + name + ", location=" + location + "]";
+	}
+	
+	/*public int getEmplId() {
 		return 0;
 	}
 
@@ -52,6 +89,12 @@ public class Employee {
 
 	public void setLocation(String location) {
 
-	}
+	}*/
 
+	
+
+	
+
+	
+	
 }

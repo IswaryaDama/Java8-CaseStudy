@@ -1,5 +1,9 @@
 package com.learn.issuetracker.repository;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Optional;
+
 import com.learn.issuetracker.model.Employee;
 import com.learn.issuetracker.model.Issue;
 
@@ -16,7 +20,15 @@ public class Utility {
 	 * parseEmployee takes a string with employee details as input parameter and parses it in to an Employee Object 
 	*/
 	public static Employee parseEmployee(String employeeDetail) {
-		return null;
+		if(employeeDetail!=null && !(employeeDetail.isEmpty())) {
+			
+			String[] empdetails = employeeDetail.split(",");
+			
+			Employee e = new Employee(Integer.parseInt(empdetails[0]),empdetails[1],empdetails[2]);
+			return e;
+		}
+		
+				return null;
 	}
 
 	/*
@@ -26,6 +38,22 @@ public class Utility {
 	*/
 
 	public static Issue parseIssue(String issueDetail) {
-		return null;
+		DateTimeFormatter format = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		Issue i = null;
+		String[] details = issueDetail.split(",");
+		Optional<Employee> optionDetail = EmployeeRepository.getEmployee(Integer.parseInt(details[6]));
+		if(optionDetail.isPresent()) {
+			Employee detail = optionDetail.get();
+			if(details!=null && details.length>0) {
+				 i = new Issue(details[0],details[1],LocalDate.parse(details[2],format),LocalDate.parse(details[3],format),details[4],details[5],detail);
+			return i;
+			}
+		}
+		else {
+			 i = new Issue(details[0],details[1],LocalDate.parse(details[2],format),LocalDate.parse(details[3],format),details[4],details[5],null);
+		     return i;
+		}
+		
+		return i;
 	}
 }
