@@ -64,37 +64,8 @@ public class Employee {
 	
 	@Override
 	public String toString() {
-		return "Employee [emplId=" + emplId + ", name=" + name + ", location=" + location + "]";
+		return "Employee:{Employee Id=" + emplId + ", Name=" + name + ", Location=" + location + "}";
 	}
-	
-	/*public int getEmplId() {
-		return 0;
-	}
-
-	public void setEmplId(int emplId) {
-
-	}
-
-	public String getName() {
-		return null;
-	}
-
-	public void setName(String name) {
-
-	}
-
-	public String getLocation() {
-		return null;
-	}
-
-	public void setLocation(String location) {
-
-	}*/
-
-	
-
-	
-
-	
+		
 	
 }
