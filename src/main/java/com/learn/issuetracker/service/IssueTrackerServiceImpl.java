@@ -71,7 +71,7 @@ public class IssueTrackerServiceImpl implements IssueTrackerService {
 		}
 		Issue issueObj =null;
 	Optional<Issue> issue =	issueDao.getIssues().stream().filter(i->i.getIssueId().equalsIgnoreCase(issueId)).findFirst();
-	    //issue.forEach(System.out::println);
+	   
 		if(issue.isPresent()) {
 			issueObj=issue.get();
 						

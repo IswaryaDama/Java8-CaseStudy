@@ -24,10 +24,7 @@ public class Issue {
 	 * Complete the parameterized Constructor
 	 */
 	
-	/*public Issue(String issueId, String summary, LocalDate createdOn, LocalDate expectedResolutionOn, String priority,
-			String status, Employee assignedTo) {
-
-	}*/
+	
 
 	public Issue(String issueId, String summary, LocalDate createdOn, LocalDate expectedResolutionOn, String priority,
 			String status, Employee assignedTo) {
